@@ -121,7 +121,7 @@ int l_a[7][6]={
   {0,0,0,0,0,-80},
   {0,0,0,0,0,0}};
 
-int delection = 0;
+int direction = 0;
 
 void Initial_Value(){  //initial servo angle
   for (int j=0; j <=5 ; j++){
@@ -179,7 +179,7 @@ void forward_step()
     }
   servo_set();
   }
-  delection = 0;
+  direction = 0;
 }
 
 void back_step()
@@ -190,7 +190,7 @@ void back_step()
     }
   servo_set();
   }
-  delection = 0;
+  direction = 0;
 }
 
 void right_step()
@@ -204,7 +204,7 @@ void right_step()
   }
   face_clear();
   face_center();
-  delection = 0;
+  direction = 0;
 }
 
 void left_step()
@@ -218,7 +218,7 @@ void left_step()
   }
   face_clear();
   face_center();
-  delection = 0;
+  direction = 0;
 }
 
 void right_arm()
@@ -232,7 +232,7 @@ void right_arm()
   }
   face_clear();
   face_center();
-  delection = 0;
+  direction = 0;
 }
 
 void left_arm()
@@ -246,7 +246,7 @@ void left_arm()
   }
   face_clear();
   face_center();
-  delection = 0;
+  direction = 0;
 }
 
 void servo_set(){
@@ -274,7 +274,7 @@ void servo_set(){
 BLYNK_WRITE(V0) {
   int x = param.asInt();
   if(x == 1){
-    delection = 70;  //forward step
+    direction = 70;  //forward step
     Serial.println("FWD");
   }
 }
@@ -282,7 +282,7 @@ BLYNK_WRITE(V0) {
 BLYNK_WRITE(V1) {
   int x = param.asInt();
   if(x == 1){
-    delection = 66;  //Back step
+    direction = 66;  //Back step
     Serial.println("BACK");
   }
 }
@@ -290,7 +290,7 @@ BLYNK_WRITE(V1) {
 BLYNK_WRITE(V2) {
   int x = param.asInt();
   if(x == 1){
-    delection = 76;  //Left turn step
+    direction = 76;  //Left turn step
     Serial.println("LEFT STEP");
   }
 }
@@ -298,7 +298,7 @@ BLYNK_WRITE(V2) {
 BLYNK_WRITE(V3) {
   int x = param.asInt();
   if(x == 1){
-    delection = 82;  //Right turn step
+    direction = 82;  //Right turn step
     Serial.println("Right STEP");
   }
 }
@@ -306,7 +306,7 @@ BLYNK_WRITE(V3) {
 BLYNK_WRITE(V4) {
   int x = param.asInt();
   if(x == 1){
-    delection = 77;  //Right Arm
+    direction = 77;  //Right Arm
     Serial.println("RIGHT ARM");
   }
 }
@@ -314,7 +314,7 @@ BLYNK_WRITE(V4) {
 BLYNK_WRITE(V5) {
   int x = param.asInt();
   if(x == 1){
-    delection = 72;  //Left Arm
+    direction = 72;  //Left Arm
   Serial.println("LEFT ARM");  
   }
 }
@@ -362,7 +362,7 @@ void loop() {
     Initial_Value();
   }
   
-  switch (delection) {
+  switch (direction) {
     case 70: // F FWD
       forward_step();
     break;
