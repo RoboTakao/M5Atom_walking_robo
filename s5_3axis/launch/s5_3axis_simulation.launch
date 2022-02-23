@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<launch>
+  <param name="robot_description" textfile="$(find s5_3axis)/urdf/s5_3axis_sim.urdf" />
+  <include file="$(find gazebo_ros)/launch/empty_world.launch" />
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -model s5_3axis" />
+  <rosparam file="$(find s5_3axis)/controllers.yaml" command="load"/>
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" args="arm_controller"/>
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
+</launch>
