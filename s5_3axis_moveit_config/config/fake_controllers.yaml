@@ -1,0 +1,11 @@
+controller_list:
+  - name: fake_single_controller
+    joints:
+      - joint1
+      - joint2
+      - joint3
+      - control_point_joint1
+      - control_point_joint2
+initial:  # Define initial robot poses.
+  - group: single
+    pose: initial_pose
