@@ -99,13 +99,13 @@ def callback(wii_joy):
             shiftZZ = -float(wii_joy.data[2])/2
             print("Walk Side Mode", flag_w_s, flag_m, shiftXX, shiftZZ)        
 
-def callback_imu(IMU_data):
+def callback_imu(IMU_Distance_data):
     global angXX, angYY, angXX0, angZZ0, div_angXX, div_angZZ
-    print(IMU_data.data[0], IMU_data.data[1], IMU_data.data[2])
+    print(IMU_Distance_data.data[0], IMU_Distance_data.data[1], IMU_Distance_data.data[2])
 
     if flag_w_s == False:
-        angXX0 = -IMU_data.data[0]
-        angZZ0 = -IMU_data.data[1]
+        angXX0 = -IMU_Distance_data.data[0]
+        angZZ0 = -IMU_Distance_data.data[1]
         div_angXX = angXX - angXX0
         div_angZZ = angZZ - angZZ0
 
@@ -301,7 +301,7 @@ def talker(shiftX, shiftY, shiftZ, angX, angY, angZ):
 
 if __name__ == '__main__':
     rospy.Subscriber("Wii_joystick",Int32MultiArray,callback)
-    rospy.Subscriber("IMU_data",Int32MultiArray,callback_imu)
+    rospy.Subscriber("IMU_Distance_data",Int32MultiArray,callback_imu)
     
     while True:
         try:
