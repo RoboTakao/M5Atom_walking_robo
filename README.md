@@ -2,16 +2,18 @@
 
 https://www.kohgakusha.co.jp/books/detail/978-4-7775-2188-3
 
-「M5Atom」って何？
+■「M5Atom」って何？
 
 「Arduino」の出現
 「M5Stack」の登場
 いよいよ「M5Atom」登場
+
 ■まずはLチカ
 
 「Arduino IDE」のインストール
 「USBドライバ」のインストール
 「ボードマネージャ」の設定
+
 ■「4軸二足歩行ロボット」の製作
 
 「サーボ」について
@@ -19,6 +21,7 @@ https://www.kohgakusha.co.jp/books/detail/978-4-7775-2188-3
 部品の加工
 歩行モーション作成
 「Blynk」によるコントロール
+
 ■「6軸二足歩行ロボット」の製作
 
 「Fusion360」による部品設計
@@ -29,6 +32,7 @@ https://www.kohgakusha.co.jp/books/detail/978-4-7775-2188-3
 「サーボ」のトリミング
 「Matrix LED」による顔表現
 モーション作成
+
 ■12軸四脚ロボット
 
 「12軸四脚ロボット」の概要
